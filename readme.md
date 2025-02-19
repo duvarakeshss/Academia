@@ -38,13 +38,13 @@ A full-stack web application designed to facilitate seamless communication betwe
     ```bash
     cd backend
     npm install
-    npm start
+    nodemon run server
     ```
 3. **Frontend Setup**
    ```bash
-     cd ../frontend
+    cd ../frontend
     npm install
-    npm start
+    npm run dev
    ```
 ## API Endpoints
 
