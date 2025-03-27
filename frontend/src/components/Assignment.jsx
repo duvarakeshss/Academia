@@ -19,7 +19,7 @@ const Assignment = () => {
       try {
         const studentId = localStorage.getItem("userName");
         const response = await axios.post(
-          "https://collab-frontend-putq.onrender.com/api/auth/assignment/listAssignmentsForStudent",
+          "https://academia-png1.onrender.com/api/auth/assignment/listAssignmentsForStudent",
           {
             studentId,
             courseId: course?.courseCode,
@@ -59,7 +59,7 @@ const Assignment = () => {
         const fileBase64 = await convertFileToBase64(file);
 
         const response = await axios.post(
-          `https://collab-imps.onrender.com/api/auth/assignment/submitAssignment`,
+          `https://academia-png1.onrender.com/api/auth/assignment/submitAssignment`,
           {
             studentId,
             assignmentId,
