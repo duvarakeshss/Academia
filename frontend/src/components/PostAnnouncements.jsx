@@ -20,7 +20,7 @@ const PostAnnouncements = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.post(
-          "https://collab-i4sn.onrender.com/api/auth/teacher/listTeacherCourse",
+          "https://academia-png1.onrender.com/api/auth/teacher/listTeacherCourse",
           { teacherId }
         );
 
