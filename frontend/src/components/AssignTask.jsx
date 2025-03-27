@@ -20,7 +20,7 @@ const AssignTask = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.post(
-          "https://collab-i4sn.onrender.com/api/auth/teacher/listTeacherCourse", // Adjusted endpoint
+          "https://academia-png1.onrender.com/api/auth/teacher/listTeacherCourse", // Adjusted endpoint
           { teacherId }
         );
 
