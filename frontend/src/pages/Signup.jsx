@@ -22,7 +22,7 @@ const SignUp = () => {
     setLoading(true); 
 
     try {
-      const response = await axios.post("https://collab-i4sn.onrender.com/api/auth/user/register", {
+      const response = await axios.post("https://academia-png1.onrender.com/api/auth/user/register", {
         userName,
         name,
         role,
