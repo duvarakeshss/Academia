@@ -17,7 +17,7 @@ const port = process.env.PORT;
 app.use(express.json({ limit: "100mb" }));
 app.use(
   cors({
-    origin: ["https://collab-frontend-putq.onrender.com","http://localhost:5173"],
+    origin: ["https://collab-frontend-putq.onrender.com","http://localhost:5173","https://collab-tech-puce.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
