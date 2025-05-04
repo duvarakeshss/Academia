@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_SERVER_URL ;
+
 
 const CoursePage = () => {
   const location = useLocation();
@@ -13,7 +15,7 @@ const CoursePage = () => {
     const fetchAnnouncements = async () => {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/announcement/listCourseAnnouncement",
+          `${API_URL}/api/auth/announcement/listCourseAnnouncement`,
           { courseCode: course?.courseCode }
         );
         if (response.data.success) {

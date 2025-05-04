@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoadingPage from "./LoadingPage"; 
+const API_URL = import.meta.env.VITE_SERVER_URL ;
 
 const Login = () => {
   const [userName, setUserName] = useState("");
@@ -20,7 +21,7 @@ const Login = () => {
     setLoading(true); 
 
     try {
-      const response = await axios.post("https://academia-png1.onrender.com/api/auth/user/login", {
+      const response = await axios.post(`${API_URL}/api/auth/user/login`, {
         userName,
         password,
       });

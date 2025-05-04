@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import LoadingPage from "./LoadingPage"; 
+import LoadingPage from "./LoadingPage";
+const API_URL = import.meta.env.VITE_SERVER_URL ; 
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Dashboard = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/course/dashboard",
+          `${API_URL}/api/auth/course/dashboard`,
           { userName: storedUserName },
           {
             headers: {

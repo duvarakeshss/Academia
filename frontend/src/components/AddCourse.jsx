@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_SERVER_URL ;
 
 const AddCourse = () => {
   const [courseList, setCourseList] = useState([]);
@@ -11,7 +12,7 @@ const AddCourse = () => {
     const fetchAllCourses = async () => {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/course/allCourse"
+          `${API_URL}/api/auth/course/allCourse`
         );
         if (response.data.success) {
           const { courseCodes, courseNames } = response.data;
@@ -31,7 +32,7 @@ const AddCourse = () => {
     const fetchAssignedCourses = async () => {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/teacher/listTeacherCourse",
+          `${API_URL}/api/auth/teacher/listTeacherCourse`,
           { teacherId } 
         );
         if (response.data.success) {
@@ -59,7 +60,7 @@ const AddCourse = () => {
     if (!assignedCourses.find((assigned) => assigned.code === course.code)) {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/teacher/addCourse",
+          `${API_URL}/api/auth/teacher/addCourse`,
           {
             teacherId, 
             courseId: [course.code],

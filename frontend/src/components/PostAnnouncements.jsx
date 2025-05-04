@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_SERVER_URL ;
 
 const PostAnnouncements = () => {
   const [courses, setCourses] = useState([]);
@@ -20,7 +21,7 @@ const PostAnnouncements = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/teacher/listTeacherCourse",
+          `${API_URL}/api/auth/teacher/listTeacherCourse`,
           { teacherId }
         );
 
@@ -49,7 +50,7 @@ const PostAnnouncements = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://collab-i4sn.onrender.com/api/auth/announcement/listCourseAnnouncement",
+        `${API_URL}/api/auth/announcement/listCourseAnnouncement`,
         { courseCode }
       );
       if (response.data.success) {
@@ -80,7 +81,7 @@ const PostAnnouncements = () => {
 
     try {
       const response = await axios.post(
-        "https://collab-i4sn.onrender.com/api/auth/announcement/addAnnouncement",
+        `${API_URL}/api/auth/announcement/addAnnouncement`,
         {
           teacherId,
           courseCode: selectedCourse,

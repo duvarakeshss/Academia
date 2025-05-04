@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_SERVER_URL ;
 
 const AssignTask = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const AssignTask = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/teacher/listTeacherCourse", // Adjusted endpoint
+          `${API_URL}/api/auth/teacher/listTeacherCourse`, 
           { teacherId }
         );
 
@@ -75,7 +76,7 @@ const AssignTask = () => {
       };
 
       const response = await axios.post(
-        "https://collab-imps.onrender.com/api/auth/assignment/addAssignment",    
+        `${API_URL}/api/auth/assignment/addAssignment`,    
         payload,
         {
           headers: { "Content-Type": "application/json" },

@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_SERVER_URL ;
 
 dayjs.extend(relativeTime);
 
@@ -19,7 +20,7 @@ const Assignment = () => {
       try {
         const studentId = localStorage.getItem("userName");
         const response = await axios.post(
-          "https://academia-png1.onrender.com/api/auth/assignment/listAssignmentsForStudent",
+          `${API_URL}/api/auth/assignment/listAssignmentsForStudent`,
           {
             studentId,
             courseId: course?.courseCode,
@@ -59,7 +60,7 @@ const Assignment = () => {
         const fileBase64 = await convertFileToBase64(file);
 
         const response = await axios.post(
-          `https://academia-png1.onrender.com/api/auth/assignment/submitAssignment`,
+          `${API_URL}/api/auth/assignment/submitAssignment`,
           {
             studentId,
             assignmentId,
